@@ -11,6 +11,9 @@ const reportSchema = new mongoose.Schema({
   manufacturer: {
     type: String,
   },
+  country: {
+    type: String,
+  },
   motorVehicle: {
     type: String,
     default: "Moter Vehicle",
