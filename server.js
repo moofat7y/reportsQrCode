@@ -17,9 +17,9 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 // MIDDLEWARES
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
 // Add this with other routes
 app.use("/api/v1/report", reportRoute);
 app.use("/api/v1/auth", authRoute);
