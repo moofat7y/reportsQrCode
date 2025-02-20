@@ -4,7 +4,7 @@ import QRCode from "qrcode";
 // Get all reports
 export const getAllReports = async (req, res, next) => {
   try {
-    const reports = await Report.find();
+    const reports = await Report.find().sort({ createdAt: -1 });
     res.status(200).json({
       success: true,
       count: reports.length,
@@ -30,6 +30,28 @@ export const getReportById = async (req, res, next) => {
     res.status(200).json({
       success: true,
       data: report,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Delete report by ID
+export const deleteReportById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const report = await Report.deleteOne({ _id: id });
+
+    if (!report) {
+      const error = new Error("Report not found");
+      error.statusCode = 404;
+      throw error;
+    }
+
+    res.status(200).json({
+      success: true,
+      data: null,
+      message: "Report deleted successfuly",
     });
   } catch (error) {
     next(error);

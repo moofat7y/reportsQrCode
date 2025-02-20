@@ -3,41 +3,32 @@ import mongoose from "mongoose";
 const reportSchema = new mongoose.Schema({
   certificateNumber: {
     type: String,
-    required: true,
     unique: true,
   },
   approvedOn: {
     type: Date,
-    required: true,
   },
   manufacturer: {
     type: String,
-    required: true,
   },
   motorVehicle: {
     type: String,
-    required: true,
     default: "Moter Vehicle",
   },
   category: {
     type: String,
-    required: true,
   },
   variantModel: {
     type: String,
-    required: true,
   },
   production: {
     type: String,
-    required: true,
   },
   producedInAfter: {
     type: String,
-    required: true,
   },
   vin: {
     type: String,
-    required: true,
   },
   specifications: {
     weights: {
@@ -70,6 +61,7 @@ const reportSchema = new mongoose.Schema({
       displacement: Number,
       airIntake: String,
       netEnginePower: String,
+      engineRPM: String,
       pollutantLimit: String,
       transmission: String,
       sosSystem: String,
@@ -87,6 +79,7 @@ const reportSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  complianceInfo: String,
   createdAt: {
     type: Date,
     default: Date.now,

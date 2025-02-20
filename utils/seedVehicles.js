@@ -13,59 +13,61 @@ const seedOneReport = async () => {
 
     if (existingReports === 0) {
       const reportData = {
-        certificateNumber: "VH001",
-        approvedOn: new Date("2025-02-19T00:00:00.000Z"),
+        certificateNumber: "ABC123456",
+        approvedOn: new Date("2024-01-15T00:00:00Z"),
         manufacturer: "Toyota",
-        motorVehicle: "Sedan",
-        category: "M1",
-        variantModel: "Camry",
-        production: "2024",
+        motorVehicle: "Motor Vehicle",
+        category: "SUV",
+        variantModel: "RAV4",
+        production: "Mass Production",
         producedInAfter: "2023",
-        vin: "JTDBE32KX40215879",
+        vin: "1HGCM82633A123456",
         specifications: {
           weights: {
-            maxVehicleWeight: 2000,
+            maxVehicleWeight: 2500,
             curb: 1500,
           },
           maxAxleWeight: {
-            front: 1000,
-            rear: 1000,
+            front: 1200,
+            rear: 1300,
           },
           dimensions: {
-            length: 4500,
+            length: 4600,
             width: 1800,
-            height: 1500,
+            height: 1700,
           },
           wheelBase: {
             f1r1: 2700,
           },
           track: {
-            front: 1500,
-            rear: 1500,
+            front: 1550,
+            rear: 1560,
           },
           bodyAndSeating: {
-            typeOfBody: "Sedan",
+            typeOfBody: "SUV",
             numberOfSeats: 5,
           },
           engine: {
-            engineType: "Gasoline",
+            engineType: "Inline-4",
             cylinders: 4,
             displacement: 2000,
-            airIntake: "Natural",
-            netEnginePower: "150 HP",
+            airIntake: "Turbocharged",
+            netEnginePower: "150 kW",
+            engineRPM: "6000",
             pollutantLimit: "Euro 6",
             transmission: "Automatic",
-            sosSystem: "Yes",
+            sosSystem: "Enabled",
           },
           brakes: {
-            serviceBrakes: "Hydraulic",
-            emergencyBrake: "Electronic",
+            serviceBrakes: "Disc",
+            emergencyBrake: "ABS",
           },
         },
         fuelEconomy: {
-          motorVehicleClass: "Passenger",
-          feCombined: "16.5 kmpl",
+          motorVehicleClass: "Compact SUV",
+          feCombined: "30 MPG",
         },
+        complianceInfo: "Meets all regulatory standards",
       };
 
       const newReport = new Report(reportData);
